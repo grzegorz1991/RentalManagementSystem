@@ -10,9 +10,8 @@ import java.util.List;
 
 @Service
 public class EquipmentService {
-
     @Autowired
-private EquipmentRepository equipmentRepository;
+    private EquipmentRepository equipmentRepository;
 
 
     public List<Equipment> getAllEquipment() {
