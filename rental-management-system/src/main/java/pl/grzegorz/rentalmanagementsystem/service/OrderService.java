@@ -23,7 +23,7 @@ public class OrderService {
     }
 
     public Order placeOrder(Order order) {
-        // Implement logic to place the order
-        // For example, you may need to validate equipment availability, user information, etc.
+
+        //  validate equipment availability, user information, etc.
         return orderRepository.save(order);
     }}

@@ -1,0 +1,1 @@
+1. All methods will be tested from services and controllers
