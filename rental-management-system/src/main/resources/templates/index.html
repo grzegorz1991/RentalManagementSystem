@@ -90,38 +90,19 @@
     </div>
 </div>
 <!-- end hero area -->
-<script>
-    const backgrounds = document.querySelectorAll('.custom-bg');
-    const imageUrls = [
-        'url(../img/custom-graphics/Backgrounds/BG-1.jpeg)',
-        'url(../img/custom-graphics/Backgrounds/BG-2.jpeg)',
-        'url(../img/custom-graphics/Backgrounds/BG-3.jpeg)',
-        'url(../img/custom-graphics/Backgrounds/BG-4.jpeg)',
-        'url(../img/custom-graphics/Backgrounds/BG-5.jpeg)',
-        'url(../img/custom-graphics/Backgrounds/BG-6.jpeg)',
-        'url(../img/custom-graphics/Backgrounds/BG-7.jpeg)',
-        'url(../img/custom-graphics/Backgrounds/BG-8.jpeg)',
-        'url(../img/custom-graphics/Backgrounds/BG-9.jpeg)',
-        'url(../img/custom-graphics/Backgrounds/BG-10.jpeg)',
-        'url(../img/custom-graphics/Backgrounds/BG-11.jpeg)',
-        'url(../img/custom-graphics/Backgrounds/BG-12.jpeg)',
-        'url(../img/custom-graphics/Backgrounds/BG-13.jpeg)'
-    ];
 
-    backgrounds.forEach(background => {
-        const randomIndex = Math.floor(Math.random() * imageUrls.length);
-        background.style.backgroundImage = imageUrls[randomIndex];
-        background.style.backgroundSize = 'cover';
-        background.style.backgroundPosition = 'center';
-        background.style.backgroundAttachment = 'fixed';
-    });
 
-</script>
 
 
 <!-- features list section -->
+<!--
 <div th:replace="fragments/feature-list :: feature-list"></div>
+-->
 <!-- end features list section -->
+
+<!-- Our feuture list -->
+<div th:replace="fragments/our-feauture-list :: our-feature-list"></div>
+<!-- end our-features list section -->
 
 <!-- product section -->
 <div th:replace="fragments/product-section :: product-section"></div>
