@@ -1354,18 +1354,22 @@ a.mobile-show.search-bar-icon {
 a.mobile-show.search-bar-icon:hover {
   color: #F28123;
 }
-
 /* -----------------------------------------------------------------------------
+
+
 
 # Hero Styles
 static/img/custom-graphics/BG (27).jpeg
 ----------------------------------------------------------------------------- */
 .hero-bg {
-  background-image: url(../img/custom-graphics/BG27.jpeg);
+  background-image: url(../img/custom-graphics/BG26.jpeg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
+
+
+
 
 .hero-text {
   display: table;
@@ -1468,7 +1472,7 @@ input[type="submit"] {
 }
 
 .homepage-bg-1 {
-  background-image: url(../img/custom-graphics/BG27.jpeg);
+  background-image: url(../img/custom-graphics/BG26.jpeg);
 }
 
 .homepage-bg-2 {

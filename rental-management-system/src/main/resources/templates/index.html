@@ -31,7 +31,13 @@
 	<link rel="stylesheet" th:href="@{/css/main.css}">
 	<!-- Link to responsive.css -->
 	<link rel="stylesheet" th:href="@{/css/responsive.css}">
-
+	<!--
+	<style>
+		.custom-bg {
+			display: none;
+		}
+	</style>
+	-->
 </head>
 <body>
 
@@ -130,10 +136,8 @@
 			</div>
 		</div>
 	</div>
-	<!-- end search area -->
-
-	<!-- hero area -->
-	<div class="hero-area hero-bg">
+	<!-- hero area <div class="hero-area hero-bg">-->
+	<div class="hero-area custom-bg">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 offset-lg-2 text-center">
@@ -152,6 +156,34 @@
 		</div>
 	</div>
 	<!-- end hero area -->
+	<script>
+		const backgrounds = document.querySelectorAll('.custom-bg');
+		const imageUrls = [
+			'url(../img/custom-graphics/Backgrounds/BG-1.jpeg)',
+			'url(../img/custom-graphics/Backgrounds/BG-2.jpeg)',
+			'url(../img/custom-graphics/Backgrounds/BG-3.jpeg)',
+			'url(../img/custom-graphics/Backgrounds/BG-4.jpeg)',
+			'url(../img/custom-graphics/Backgrounds/BG-5.jpeg)',
+			'url(../img/custom-graphics/Backgrounds/BG-6.jpeg)',
+			'url(../img/custom-graphics/Backgrounds/BG-7.jpeg)',
+			'url(../img/custom-graphics/Backgrounds/BG-8.jpeg)',
+			'url(../img/custom-graphics/Backgrounds/BG-9.jpeg)',
+			'url(../img/custom-graphics/Backgrounds/BG-10.jpeg)',
+			'url(../img/custom-graphics/Backgrounds/BG-11.jpeg)',
+			'url(../img/custom-graphics/Backgrounds/BG-12.jpeg)',
+			'url(../img/custom-graphics/Backgrounds/BG-13.jpeg)'
+		];
+
+		backgrounds.forEach(background => {
+			const randomIndex = Math.floor(Math.random() * imageUrls.length);
+			background.style.backgroundImage = imageUrls[randomIndex];
+			background.style.backgroundSize = 'cover';
+			background.style.backgroundPosition = 'center';
+			background.style.backgroundAttachment = 'fixed';
+		});
+
+	</script>
+
 
 	<!-- features list section -->
 	<div class="list-section pt-80 pb-80">
