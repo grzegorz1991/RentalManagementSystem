@@ -25,10 +25,12 @@ public class Equipment {
     private String name;
 
     @Enumerated(EnumType.STRING)
-    private EquipmentType type; // Enum field for equipment type
+    private EquipmentType type;
 
     private int quantity;
 
     private double price;
+
+    private String imageUrl;
 
 }

@@ -87,8 +87,10 @@
 					<div th:class="'col-lg-4 col-md-6 text-center ' + ${equipment.type}">
 						<div class="single-product-item">
 							<div class="product-image">
-								<!-- Use equipment image if available -->
-
+								<!-- Use equipment image from database if available -->
+								<img th:if="${equipment.imageUrl != null}" th:src="${equipment.imageUrl}" alt="Product Image">
+								<!-- Use a default image if equipment image is not available -->
+								<img th:unless="${equipment.imageUrl != null}" th:src="@{/img/custom-graphics/Icons/Company logos/Logo5.png}" alt="Default Image">
 							</div>
 							<h3 th:text="${equipment.name}">Product Name</h3>
 							<p class="product-price">
