@@ -122,25 +122,7 @@
 		</div>
 	</div>
 	<!-- end products -->
-	<div class="row product-lists">
-		<!-- Iterate over equipmentList -->
-		<th:block th:each="equipment : ${equipmentList}">
-			<div class="col-lg-4 col-md-6 text-center">
-				<div class="single-product-item">
-					<div class="product-image">
-						<!-- Use equipment image if available -->
 
-					</div>
-					<h3 th:text="${equipment.name}">Product Name</h3>
-					<p class="product-price">
-						<span>Price:</span> <span th:text="${equipment.price}"></span> <!-- Use equipment price -->
-					</p>
-					<!-- Add to Cart button or any other action -->
-					<a href="#" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-				</div>
-			</div>
-		</th:block>
-	</div>
 
 	<!-- logo carousel -->
 	<div th:replace="fragments/logo-carusel"></div>
