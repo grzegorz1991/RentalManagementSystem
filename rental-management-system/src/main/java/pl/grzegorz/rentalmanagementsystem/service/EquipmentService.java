@@ -13,20 +13,15 @@ import java.util.Optional;
 public class EquipmentService { 
     @Autowired
     private EquipmentRepository equipmentRepository;
-
-
     public List<Equipment> getAllEquipment() {
         return equipmentRepository.findAll();
     }
-
-
     public Optional<Equipment> getEquipmentById(Long id) {
         return equipmentRepository.findById(id);
     }
     public Equipment saveEquipment(Equipment equipment) {
         return equipmentRepository.save(equipment);
     }
-
     public void deleteEquipment(Long id) {
         equipmentRepository.deleteById(id);
     }
