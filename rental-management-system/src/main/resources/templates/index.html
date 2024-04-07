@@ -48,8 +48,28 @@
 <div th:replace="fragments/search-area :: search-area"></div>
 <!-- end search area -->
 
+
 <!-- hero area <div class="hero-area hero-bg">-->
-<div th:replace="fragments/hero-area:: hero-area"></div>
+<div class="hero-area custom-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 offset-lg-2 text-center">
+                <div class="hero-text">
+                    <div class="hero-text-tablecell">
+                        <p class="subtitle">Rental MS</p>
+                        <h1 th:text="${randomSlogan}">Rental MS - Slogan</h1>
+                        <div class="hero-btns">
+                            <a href="/shop" class="boxed-btn">Our Shop</a>
+                            <a href="/contact" class="bordered-btn">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- end hero area -->
 
 <!-- Our feauture list -->
@@ -65,7 +85,7 @@
 <!-- end cart banner section -->
 
 <!-- testimonail-section -->
-<div th:replace="fragments/testimonail :: testimonail"></div>
+<div th:replace="fragments/testimonail :: testimonial"></div>
 <!-- end testimonail-section -->
 
 <!-- advertisement section -->

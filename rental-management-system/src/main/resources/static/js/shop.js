@@ -14,8 +14,11 @@ async function addToCart(event) {
     // Prevent default form submission
     event.preventDefault();
 
-    // Get the equipment ID from the data attribute of the clicked button
+    // Get the equipment ID from the data attribute
     const equipmentId = event.target.dataset.equipmentId;
+
+    // Get the quantity from the user input (if applicable)
+    // For simplicity, you can assume a quantity of 1
 
     // Log the equipment ID to confirm the action
     console.log(`Adding equipment with ID ${equipmentId} to cart...`);

@@ -1594,19 +1594,19 @@ div.owl-controls, .owl-controls div {
 
 ----------------------------------------------------------------------------- */
 .news-bg-1 {
-  background-image: url(../img/latest-news/news-bg-1.jpg);
+  background-image: url(../img/custom-graphics/Other/News1.jpeg);
 }
 
 .news-bg-2 {
-  background-image: url(../img/latest-news/news-bg-2.jpg);
+  background-image: url(../img/custom-graphics/Other/News2.jpeg);
 }
 
 .news-bg-3 {
-  background-image: url(../img/latest-news/news-bg-3.jpg);
+  background-image: url(../img/custom-graphics/Other/News3.jpeg);
 }
 
 .news-bg-4 {
-  background-image: url(../img/latest-news/news-bg-4.jpg);
+  background-image: url(../img/custom-graphics/Other/News4.jpeg);
 }
 
 .news-bg-5 {
@@ -2070,7 +2070,7 @@ a.video-play-btn {
 }
 
 .abt-bg {
-  background-image: url(../img/abt.jpg);
+  background-image: url(../img/custom-graphics/Other/VideoBackground.jpeg);
   height: 100%;
   width: 100%;
   background-size: cover;
@@ -2121,7 +2121,7 @@ a.video-play-btn {
 .shop-banner {
   position: relative;
   background-color: #f5f5f5;
-  background-image: url(../img/1.jpg);
+  background-image: url(../img/custom-graphics/Other/PromotionBackground.png);
   background-size: cover;
   padding: 110px 0px 115px;
 }

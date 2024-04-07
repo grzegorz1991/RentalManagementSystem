@@ -7,10 +7,10 @@
 	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
 	<!-- title -->
-	<title>404!</title>
+	<title>Rental MS - 404!</title>
 
 	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" th:href="@{/img/favicon.png}">
+	<link rel="shortcut icon" type="image/png" th:href="@{/img/custom-logos/logo-small-black.png}">
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
@@ -33,97 +33,66 @@
 
 </head>
 <body>
-	
-	<!--PreLoader-->
-    <div class="loader">
-        <div class="loader-inner">
-            <div class="circle"></div>
-        </div>
-    </div>
-    <!--PreLoader Ends-->
+
+<!--PreLoader-->
+<div th:replace="fragments/pre-loader :: pre-loader"></div>
+<!--PreLoader Ends-->
 
 	<!-- header -->
 	<div th:replace="fragments/header :: header"></div>
 	<!-- end header -->
 
-		<!-- search area -->
-		<div class="search-area">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<span class="close-btn"><i class="fas fa-window-close"></i></span>
-						<div class="search-bar">
-							<div class="search-bar-tablecell">
-								<h3>Search For:</h3>
-								<input type="text" placeholder="Keywords">
-								<button type="submit">Search <i class="fas fa-search"></i></button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- end search arewa -->
-		<!-- breadcrumb-section -->
-		<div class="breadcrumb-section breadcrumb-bg">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 offset-lg-2 text-center">
-						<div class="breadcrumb-text">
-							<p>Fresh adn Organic</p>
-							<h1>404 - Not Found</h1>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- end breadcrumb section -->
-		<!-- error section -->
-		<div class="full-height-section error-section">
-			<div class="full-height-tablecell">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-8 offset-lg-2 text-center">
-							<div class="error-text">
-								<i class="far fa-sad-cry"></i>
-								<h1>Oops! Not Found.</h1>
-								<p>The page you requested for is not found.</p>
-								<a href="index.html" class="boxed-btn">Back to Home</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- end error section -->
-		<!-- logo carousel -->
-		<div class="logo-carousel-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="logo-carousel-inner">
-							<div class="single-logo-item">
+<!-- search area -->
+<div th:replace="fragments/search-area :: search-area"></div>
+<!-- end search area -->
 
-								<img th:src="@{/img/company-logos/1.png}" alt="">
-							</div>
-							<div class="single-logo-item">
-								<img th:src="@{/img/company-logos/2.png}" alt="">
-							</div>
-							<div class="single-logo-item">
-								<img th:src="@{/img/company-logos/3.png}" alt="">
-							</div>
-							<div class="single-logo-item">
-								<img th:src="@{/img/company-logos/4.png}" alt="">
-							</div>
-							<div class="single-logo-item">
-								<img th:src="@{/img/company-logos/5.png}" alt="">
+
+	<!-- breadcrumb-section -->
+	<div class="hero-area error404-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-9 offset-lg-2 text-center">
+					<div class="hero-text">
+						<div class="hero-text-tablecell">
+							<p class="subtitle">Rental MS</p>
+							<h1>404 - Not Found</h1>
+							<div class="hero-btns">
+								<a href="/" class="boxed-btn">Back to Home</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- end logo carousel -->
+	</div>
+	<!-- end breadcrumb section -->
+
+
+
+
+
+<!-- error section -->
+<div class="full-height-section error-section">
+	<div class="full-height-tablecell">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="error-text">
+						<img th:src="@{/img/custom-graphics/404-background/404-not-found.png}" alt="not found">
+						<h1>Oops! Something went wrong.</h1>
+						<p>We're sorry, but the page you requested could not be found.</p>
+						<a href="/" class="boxed-btn">Return to Homepage</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end error section -->
+
+<!-- logo carousel -->
+<div th:replace="fragments/logo-carusel :: logo-carusel"></div>
+<!-- end logo carousel -->
 
 	<!-- footer -->
 	<div th:replace="fragments/footer :: footer"></div>
@@ -154,6 +123,26 @@
 	<script th:src="@{/js/sticker.js}"></script>
 	<!-- main js -->
 	<script th:src="@{/js/main.js}"></script>
-	
+	<!-- Script for random background display -->
+	<script>
+		const backgrounds = document.querySelectorAll('.error404-bg');
+		const imageUrls = [
+			'url(../img/custom-graphics/404-background/404bg-1.jpeg)',
+			'url(../img/custom-graphics/404-background/404bg-2.jpeg)',
+			'url(../img/custom-graphics/404-background/404bg-3.jpeg)',
+			'url(../img/custom-graphics/404-background/404bg-4.jpeg)',
+			'url(../img/custom-graphics/404-background/404bg-5.jpeg)',
+
+		];
+
+		backgrounds.forEach(background => {
+			const randomIndex = Math.floor(Math.random() * imageUrls.length);
+			background.style.backgroundImage = imageUrls[randomIndex];
+			background.style.backgroundSize = 'cover';
+			background.style.backgroundPosition = 'center';
+			background.style.backgroundAttachment = 'fixed';
+		});
+
+	</script>
 	</body>
 </html>
