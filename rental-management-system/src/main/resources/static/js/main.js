@@ -85,6 +85,7 @@
          });
         }
 
+
         // projects filters isotop
         $(".product-filters li").on('click', function () {
             

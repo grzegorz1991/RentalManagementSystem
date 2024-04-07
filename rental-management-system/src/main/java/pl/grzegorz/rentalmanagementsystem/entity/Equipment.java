@@ -33,4 +33,5 @@ public class Equipment {
 
     private String imageUrl;
 
+
 }

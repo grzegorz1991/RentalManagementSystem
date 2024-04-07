@@ -1,181 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
-	<!-- title -->
-	<title>Shop</title>
+    <!-- title -->
+    <title>Shop</title>
 
-	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" th:href="@{/img/custom-logos/logo-small-black.png}">
-	<!-- google font -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-	<!-- fontawesome -->
-	<!-- Link to all.min.css -->
-	<link rel="stylesheet" th:href="@{/css/all.min.css}">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" th:href="@{/img/custom-logos/logo-small-black.png}">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <!-- Link to all.min.css -->
+    <link rel="stylesheet" th:href="@{/css/all.min.css}">
 
-	<!-- Link to bootstrap.min.css -->
-	<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
-	<!-- Link to owl.carousel.css -->
-	<link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
-	<!-- Link to magnific-popup.css -->
-	<link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
-	<!-- Link to animate.css -->
-	<link rel="stylesheet" th:href="@{/css/animate.css}">
-	<!-- Link to meanmenu.min.css -->
-	<link rel="stylesheet" th:href="@{/css/meanmenu.min.css}">
-	<!-- Link to main.css -->
-	<link rel="stylesheet" th:href="@{/css/main.css}">
-	<!-- Link to responsive.css -->
-	<link rel="stylesheet" th:href="@{/css/responsive.css}">
+    <!-- Link to bootstrap.min.css -->
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+    <!-- Link to owl.carousel.css -->
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
+    <!-- Link to magnific-popup.css -->
+    <link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+    <!-- Link to animate.css -->
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <!-- Link to meanmenu.min.css -->
+    <link rel="stylesheet" th:href="@{/css/meanmenu.min.css}">
+    <!-- Link to main.css -->
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <!-- Link to responsive.css -->
+    <link rel="stylesheet" th:href="@{/css/responsive.css}">
 
 </head>
 <body>
 
-	<!--PreLoader-->
-	<div th:replace="fragments/pre-loader"></div>
-    <!--PreLoader Ends-->
-	
-	<!-- header -->
-	<div th:replace="fragments/header"></div>
-	<!-- end header -->
+<!--PreLoader-->
+<div th:replace="fragments/pre-loader"></div>
+<!--PreLoader Ends-->
 
-	<!-- search area -->
-	<div th:replace="fragments/search-area"></div>
-	<!-- end search arewa -->
+<!-- header -->
+<div th:replace="fragments/header"></div>
+<!-- end header -->
 
-	<!-- breadcrumb-section -->
-	<div class="breadcrumb-section shop-bg">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="breadcrumb-text">
-						<p>Your Path</p>
-						<h1>Explore</h1>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end breadcrumb section -->
+<!-- search area -->
+<div th:replace="fragments/search-area"></div>
+<!-- end search arewa -->
 
-
-	<!-- products -->
-	<div class="product-section mt-150 mb-150">
-		<div class="container">
-
-			<div class="row">
-				<div class="col-md-12">
-					<div class="product-filters">
-						<ul>
-							<li class="active" data-filter="*">All</li>
-							<li data-filter=".stage">Stage</li>
-							<li data-filter=".lights">Lights</li>
-							<li data-filter=".sound">Sound</li>
-							<li data-filter=".other">Other</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="row product-lists">
-				<!-- Iterate over equipmentList -->
-				<th:block th:each="equipment : ${equipmentList}">
-					<div th:class="'col-lg-4 col-md-6 text-center ' + ${equipment.type}">
-						<div class="single-product-item">
-							<div class="product-image">
-								<!-- Use equipment image from database if available -->
-								<img th:if="${equipment.imageUrl != null}" th:src="${equipment.imageUrl}" alt="Product Image">
-								<!-- Use a default image if equipment image is not available -->
-								<img th:unless="${equipment.imageUrl != null}" th:src="@{/img/custom-graphics/Icons/Company logos/Logo5.png}" alt="Default Image">
-							</div>
-							<h3 th:text="${equipment.name}">Product Name</h3>
-							<p class="product-price">
-								<span>Price:</span> <span th:text="${equipment.price}"></span> <!-- Use equipment price -->
-							</p>
-							<!-- Add to Cart button or any other action -->
-							<a href="#" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-						</div>
-					</div>
-				</th:block>
-			</div>
-
-				<!-- Remaining products -->
-			</div>
-			<!-- PAGINATION-->
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<div class="pagination-wrap">
-						<ul>
-							<li><a href="#">Prev</a></li>
-							<li><a href="#">1</a></li>
-							<li><a class="active" href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">Next</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end products -->
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section shop-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="breadcrumb-text">
+                    <p>Your Path</p>
+                    <h1>Explore</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end breadcrumb section -->
 
 
-	<!-- logo carousel -->
-	<div th:replace="fragments/logo-carusel"></div>
-	<!-- end logo carousel -->
+<!-- products -->
+<div class="product-section mt-150 mb-150">
+    <div class="container">
 
-	<!-- footer -->
-	<div th:replace="fragments/footer"></div>
-	<!-- end footer -->
-	
-	<!-- copyright -->
-	<div th:replace="fragments/copyright"></div>
-	<!-- end copyright -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-filters">
+                    <ul>
+                        <li class="active" data-filter="*">All</li>
+                        <li data-filter=".stage">Stage</li>
+                        <li data-filter=".lights">Lights</li>
+                        <li data-filter=".sound">Sound</li>
+                        <li data-filter=".other">Other</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row product-lists">
+            <!-- Iterate over equipmentList -->
+            <th:block th:each="equipment : ${equipmentList}">
+                <div th:class="'col-lg-4 col-md-6 text-center ' + ${equipment.type}">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <!-- Use equipment image from database if available -->
+                            <img th:if="${equipment.imageUrl != null}" th:src="${equipment.imageUrl}"
+                                 alt="Product Image">
+                            <!-- Use a default image if equipment image is not available -->
+                            <img th:unless="${equipment.imageUrl != null}"
+                                 th:src="@{/img/custom-graphics/Icons/Company logos/Logo5.png}" alt="Default Image">
+                        </div>
+                        <h3 th:text="${equipment.name}">Product Name</h3>
+                        <p class="product-price">
+                            <span>Price:</span> <span th:text="${equipment.price}"></span> <!-- Use equipment price -->
+                        </p>
+
+                        <!-- Add equipmentId as a data attribute in the "Add to Cart" button -->
+
+                        <a href="#" class="cart-btn" th:data-equipment-id="${equipment.id}">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+    </div>
+
+    <!-- PAGINATION-->
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <div class="pagination-wrap">
+                <ul>
+                    <li><a href="#">Prev</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a class="active" href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">Next</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- end products -->
 
 
-	<!-- jquery -->
-	<script th:src="@{/js/jquery-1.11.3.min.js}"></script>
+<!-- logo carousel -->
+<div th:replace="fragments/logo-carusel"></div>
+<!-- end logo carousel -->
 
-	<!-- bootstrap -->
-	<script th:src="@{/js/bootstrap.min.js}"></script>
-	<!-- count down -->
-	<script th:src="@{/js/jquery.countdown.js}"></script>
-	<!-- isotope -->
-	<script th:src="@{/js/jquery.isotope-3.0.6.min.js}"></script>
-	<!-- waypoints -->
-	<script th:src="@{/js/waypoints.js}"></script>
-	<!-- owl carousel -->
-	<script th:src="@{/js/owl.carousel.min.js}"></script>
-	<!-- magnific popup -->
-	<script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
-	<!-- mean menu -->
-	<script th:src="@{/js/jquery.meanmenu.min.js}"></script>
-	<!-- sticker js -->
-	<script th:src="@{/js/sticker.js}"></script>
-	<!-- main js -->
-	<script th:src="@{/js/main.js}"></script>
-	<!-- Script for random background display -->
+<!-- footer -->
+<div th:replace="fragments/footer"></div>
+<!-- end footer -->
 
-	<script>
-		const shopBackgrounds = document.querySelectorAll('.shop-bg');
-		const imageUrls = [
-			'url(../img/custom-graphics/Shop/Backgrounds/Shop-bg1.jpeg)',
-			'url(../img/custom-graphics/Shop/Backgrounds/Shop-bg2.jpeg)',
-			'url(../img/custom-graphics/Shop/Backgrounds/Shop-bg3.jpeg)',
-		];
+<!-- copyright -->
+<div th:replace="fragments/copyright"></div>
+<!-- end copyright -->
 
-		shopBackgrounds.forEach(background => {
-			const randomIndex = Math.floor(Math.random() * imageUrls.length);
-			background.style.backgroundImage = imageUrls[randomIndex];
-			background.style.backgroundSize = 'cover';
-			background.style.backgroundPosition = 'center';
-			background.style.backgroundAttachment = 'fixed';
-		});
 
-	</script>
+<!-- jquery -->
+<script th:src="@{/js/jquery-1.11.3.min.js}"></script>
+
+<!-- bootstrap -->
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<!-- count down -->
+<script th:src="@{/js/jquery.countdown.js}"></script>
+<!-- isotope -->
+<script th:src="@{/js/jquery.isotope-3.0.6.min.js}"></script>
+<!-- waypoints -->
+<script th:src="@{/js/waypoints.js}"></script>
+<!-- owl carousel -->
+<script th:src="@{/js/owl.carousel.min.js}"></script>
+<!-- magnific popup -->
+<script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+<!-- mean menu -->
+<script th:src="@{/js/jquery.meanmenu.min.js}"></script>
+<!-- sticker js -->
+<script th:src="@{/js/sticker.js}"></script>
+<!-- main js -->
+<script th:src="@{/js/main.js}"></script>
+<!-- Script for random background display -->
+<script th:src="@{/js/shop.js}"></script>
+
+<script>
+    const shopBackgrounds = document.querySelectorAll('.shop-bg');
+    const imageUrls = [
+        'url(../img/custom-graphics/Shop/Backgrounds/Shop-bg1.jpeg)',
+        'url(../img/custom-graphics/Shop/Backgrounds/Shop-bg2.jpeg)',
+        'url(../img/custom-graphics/Shop/Backgrounds/Shop-bg3.jpeg)',
+    ];
+
+    shopBackgrounds.forEach(background => {
+        const randomIndex = Math.floor(Math.random() * imageUrls.length);
+        background.style.backgroundImage = imageUrls[randomIndex];
+        background.style.backgroundSize = 'cover';
+        background.style.backgroundPosition = 'center';
+        background.style.backgroundAttachment = 'fixed';
+    });
+
+</script>
 </body>
 </html>
