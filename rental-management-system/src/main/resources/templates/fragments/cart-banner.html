@@ -1,0 +1,46 @@
+<div th:fragment="cart-banner">
+    <section class="cart-banner pt-100 pb-100">
+        <div class="container">
+            <div class="row clearfix">
+                <!--Image Column-->
+                <div class="image-column col-lg-6">
+                    <div class="image">
+                        <div class="price-box">
+                            <div class="inner-price">
+                                <span class="price">
+                                    <strong>-30% </strong> <br> off stage lights
+                                </span>
+                            </div>
+                        </div>
+
+                        <img th:src="@{/img/custom-graphics/products/Product15.jpeg}" alt="Stage Lighting System">
+                    </div>
+                </div>
+                <!--Content Column-->
+                <div class="content-column col-lg-6">
+                    <h3><span class="orange-text">Rent</span> of the Month</h3>
+                    <h4>Stage Lighting System</h4>
+                    <div class="text">Transform your event with our professional-grade stage lighting system, now available for rent at a special discounted rate! Illuminate your stage with vibrant colors and dynamic effects to captivate your audience and create unforgettable performances.</div>
+                    <!--Countdown Timer-->
+                    <div class="time-counter">
+                        <div class="time-countdown clearfix" data-countdown="2020/2/01">
+                            <div class="counter-column">
+                                <div class="inner"><span class="count">00</span>Days</div>
+                            </div>
+                            <div class="counter-column">
+                                <div class="inner"><span class="count">00</span>Hours</div>
+                            </div>
+                            <div class="counter-column">
+                                <div class="inner"><span class="count">00</span>Mins</div>
+                            </div>
+                            <div class="counter-column">
+                                <div class="inner"><span class="count">00</span>Secs</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="cart.html" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Rent Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

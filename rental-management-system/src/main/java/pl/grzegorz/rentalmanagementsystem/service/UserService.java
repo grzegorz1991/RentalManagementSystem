@@ -17,6 +17,8 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public Optional<User> findUserById(Long id){ return userRepository.findById(id);}
+
     public Optional<User> findUserByUsername(String username) {
         return userRepository.findByUsername(username);
     }
@@ -25,5 +27,25 @@ public class UserService {
         return userRepository.findByEmail(email);
     }
 
+    public User updateUser(Long id, User updatedUser) {
 
+        Optional<User> optionalUser = userRepository.findById(id);
+        if (optionalUser.isPresent()) {
+            User existingUser = optionalUser.get();
+            existingUser.setUsername(updatedUser.getUsername());
+            existingUser.setEmail(updatedUser.getEmail());
+
+            return userRepository.save(existingUser);
+        } else {
+            throw new IllegalArgumentException("User with ID " + id + " not found");
+        }}
+
+        public void deleteUser(Long id) {
+            Optional<User> optionalUser = userRepository.findById(id);
+            if (optionalUser.isPresent()) {
+                userRepository.deleteById(id);
+            } else {
+                throw new IllegalArgumentException("User with ID " + id + " not found");
+            }
+        }
 }

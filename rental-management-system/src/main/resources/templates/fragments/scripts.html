@@ -1,0 +1,62 @@
+<div th:fragment="scripts">
+
+    <!-- jQuery -->
+    <script th:src="@{/js/jquery-1.11.3.min.js}"></script>
+
+    <!-- Bootstrap -->
+    <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+
+    <!-- Countdown -->
+    <script th:src="@{/js/jquery.countdown.js}"></script>
+
+    <!-- Isotope -->
+    <script th:src="@{/js/jquery.isotope-3.0.6.min.js}"></script>
+
+    <!-- Waypoints -->
+    <script th:src="@{/js/waypoints.js}"></script>
+
+    <!-- Owl Carousel -->
+    <script th:src="@{/js/owl.carousel.min.js}"></script>
+
+    <!-- Magnific Popup -->
+    <script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+
+    <!-- Mean Menu -->
+    <script th:src="@{/js/jquery.meanmenu.min.js}"></script>
+
+    <!-- Sticker JS -->
+    <script th:src="@{/js/sticker.js}"></script>
+
+    <!-- Main JS -->
+    <script th:src="@{/js/main.js}"></script>
+
+    <!-- Script for random background display -->
+    <script>
+        const backgrounds = document.querySelectorAll('.custom-bg');
+        const imageUrls = [
+            'url(../img/custom-graphics/Backgrounds/BG-1.jpeg)',
+            'url(../img/custom-graphics/Backgrounds/BG-2.jpeg)',
+            'url(../img/custom-graphics/Backgrounds/BG-3.jpeg)',
+            'url(../img/custom-graphics/Backgrounds/BG-4.jpeg)',
+            'url(../img/custom-graphics/Backgrounds/BG-5.jpeg)',
+            'url(../img/custom-graphics/Backgrounds/BG-6.jpeg)',
+            'url(../img/custom-graphics/Backgrounds/BG-7.jpeg)',
+            'url(../img/custom-graphics/Backgrounds/BG-8.jpeg)',
+            'url(../img/custom-graphics/Backgrounds/BG-9.jpeg)',
+            'url(../img/custom-graphics/Backgrounds/BG-10.jpeg)',
+            'url(../img/custom-graphics/Backgrounds/BG-11.jpeg)',
+            'url(../img/custom-graphics/Backgrounds/BG-12.jpeg)',
+            'url(../img/custom-graphics/Backgrounds/BG-13.jpeg)'
+        ];
+
+        backgrounds.forEach(background => {
+            const randomIndex = Math.floor(Math.random() * imageUrls.length);
+            background.style.backgroundImage = imageUrls[randomIndex];
+            background.style.backgroundSize = 'cover';
+            background.style.backgroundPosition = 'center';
+            background.style.backgroundAttachment = 'fixed';
+        });
+
+    </script>
+
+</div>

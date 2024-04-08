@@ -1,0 +1,56 @@
+<div th:fragment="product-section">
+    <div class="product-section mt-150 mb-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="section-title">
+                        <h3><span class="orange-text">Avaliable</span> Equipment for Rent</h3>
+                        <p>Explore our selection of high-quality stage equipment available for rent.
+                            From lighting and sound systems to stage platforms and props,
+                            we offer everything you need to create memorable events and performances.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a th:href="@{/single-product.html}">
+                                <img th:src="@{/img/custom-graphics/products/Product3.jpeg}" alt="">
+                            </a>
+
+                        </div>
+                        <h3>Stage Lighting System</h3>
+                        <p class="product-price"><span>Per Day</span> $85</p>
+                        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Rent Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a th:href="@{/single-product.html}">
+                                <img th:src="@{/img/custom-graphics/products/Product8.jpeg}" alt="">
+                            </a>
+                        </div>
+                        <h3>Sound System</h3>
+                        <p class="product-price"><span>Per Day</span> $120</p>
+                        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Rent Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a th:href="@{/single-product.html}">
+                                <img th:src="@{/img/custom-graphics/products/Product11.jpeg}" alt="">
+                            </a>
+                        </div>
+                        <h3>Stage Platforms</h3>
+                        <p class="product-price"><span>Per Day</span> $200</p>
+                        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Rent Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

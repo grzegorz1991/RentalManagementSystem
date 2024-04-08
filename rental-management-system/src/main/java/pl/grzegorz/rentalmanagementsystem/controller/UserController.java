@@ -3,12 +3,11 @@ package pl.grzegorz.rentalmanagementsystem.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.grzegorz.rentalmanagementsystem.entity.User;
 import pl.grzegorz.rentalmanagementsystem.service.UserService;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")
@@ -28,4 +27,23 @@ public class UserController {
         User registeredUser = userService.registerUser(user);
         return ResponseEntity.status(HttpStatus.CREATED).body(registeredUser);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<User> getUserById(@PathVariable Long id) {
+        Optional<User> user = userService.findUserById(id);
+        return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user) {
+        User updatedUser = userService.updateUser(id, user);
+        return ResponseEntity.ok(updatedUser);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }

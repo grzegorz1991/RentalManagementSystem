@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Bootstrap Template Created by Imran Hossain. Edited and used for Portfolio purposes by Grzegorz Sroda">
+
+    <!-- title -->
+    <title>Rental MS</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" th:href="@{/img/custom-logos/logo-small-black.png}">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <!-- Link to all.min.css -->
+    <link rel="stylesheet" th:href="@{/css/all.min.css}">
+
+    <!-- Link to bootstrap.min.css -->
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+    <!-- Link to owl.carousel.css -->
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
+    <!-- Link to magnific-popup.css -->
+    <link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+    <!-- Link to animate.css -->
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <!-- Link to meanmenu.min.css -->
+    <link rel="stylesheet" th:href="@{/css/meanmenu.min.css}">
+    <!-- Link to main.css -->
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <!-- Link to responsive.css -->
+    <link rel="stylesheet" th:href="@{/css/responsive.css}">
+
+</head>
+<body>
+
+<!--PreLoader-->
+<div th:replace="fragments/pre-loader :: pre-loader"></div>
+<!--PreLoader Ends-->
+
+<div th:replace="fragments/header :: header"></div>
+
+
+<!-- search area -->
+<div th:replace="fragments/search-area :: search-area"></div>
+<!-- end search area -->
+
+
+<!-- hero area <div class="hero-area hero-bg">-->
+<div class="hero-area custom-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 offset-lg-2 text-center">
+                <div class="hero-text">
+                    <div class="hero-text-tablecell">
+                        <p class="subtitle">Rental MS</p>
+                        <h1 th:text="${randomSlogan}">Rental MS - Slogan</h1>
+                        <div class="hero-btns">
+                            <a href="/shop" class="boxed-btn">Our Shop</a>
+                            <a href="/contact" class="bordered-btn">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- end hero area -->
+
+<!-- Our feauture list -->
+<div th:replace="fragments/our-feauture-list :: our-feature-list"></div>
+<!-- end our-features list section -->
+
+<!-- product section -->
+<div th:replace="fragments/product-section :: product-section"></div>
+<!-- end product section -->
+
+<!-- cart banner section -->
+<div th:replace="fragments/cart-banner :: cart-banner"></div>
+<!-- end cart banner section -->
+
+<!-- testimonail-section -->
+<div th:replace="fragments/testimonail :: testimonial"></div>
+<!-- end testimonail-section -->
+
+<!-- advertisement section -->
+<div th:replace="fragments/advertisment :: advertisment"></div>
+<!-- end advertisement section -->
+
+<!-- shop banner -->
+<div th:replace="fragments/shop-banner :: shop-banner"></div>
+<!-- end shop banner -->
+
+<!-- latest news -->
+<div th:replace="fragments/latest-news :: latest-news"></div>
+<!-- end latest news -->
+
+<!-- logo carousel -->
+<div th:replace="fragments/logo-carusel :: logo-carusel"></div>
+<!-- end logo carousel -->
+
+<!-- footer -->
+<div th:replace="fragments/footer :: footer"></div>
+<!-- end footer -->
+
+<!-- copyright -->
+<div th:insert="fragments/copyright :: copyright"></div>
+<!-- end copyright -->
+
+<!-- scripts -->
+<div th:insert="fragments/scripts :: scripts"></div>
+<!-- end scripts -->
+
+</body>
+</html>

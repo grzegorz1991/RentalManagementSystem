@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+	<!-- title -->
+	<title>Rental MS - 404!</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" th:href="@{/img/custom-logos/logo-small-black.png}">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" th:href="@{/css/all.min.css}">
+	<!-- bootstrap -->
+	<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+	<!-- owl carousel -->
+	<link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
+	<!-- magnific popup -->
+	<link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+	<!-- animate css -->
+	<link rel="stylesheet" th:href="@{/css/animate.css}">
+	<!-- mean menu css -->
+	<link rel="stylesheet" th:href="@{/css/meanmenu.min.css}">
+	<!-- main style -->
+	<link rel="stylesheet" th:href="@{/css/main.css}">
+	<!-- responsive -->
+	<link rel="stylesheet" th:href="@{/css/responsive.css}">
+
+</head>
+<body>
+
+<!--PreLoader-->
+<div th:replace="fragments/pre-loader :: pre-loader"></div>
+<!--PreLoader Ends-->
+
+	<!-- header -->
+	<div th:replace="fragments/header :: header"></div>
+	<!-- end header -->
+
+<!-- search area -->
+<div th:replace="fragments/search-area :: search-area"></div>
+<!-- end search area -->
+
+
+	<!-- breadcrumb-section -->
+	<div class="hero-area error404-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-9 offset-lg-2 text-center">
+					<div class="hero-text">
+						<div class="hero-text-tablecell">
+							<p class="subtitle">Rental MS</p>
+							<h1>404 - Not Found</h1>
+							<div class="hero-btns">
+								<a href="/" class="boxed-btn">Back to Home</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+
+
+
+
+<!-- error section -->
+<div class="full-height-section error-section">
+	<div class="full-height-tablecell">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="error-text">
+						<img th:src="@{/img/custom-graphics/404-background/404-not-found.png}" alt="not found">
+						<h1>Oops! Something went wrong.</h1>
+						<p>We're sorry, but the page you requested could not be found.</p>
+						<a href="/" class="boxed-btn">Return to Homepage</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end error section -->
+
+<!-- logo carousel -->
+<div th:replace="fragments/logo-carusel :: logo-carusel"></div>
+<!-- end logo carousel -->
+
+	<!-- footer -->
+	<div th:replace="fragments/footer :: footer"></div>
+	<!-- end footer -->
+
+	<!-- copyright -->
+	<div th:insert="fragments/copyright :: copyright"></div>
+	<!-- end copyright -->
+	
+	<!-- jquery -->
+	<script th:src="@{/js/jquery-1.11.3.min.js}"></script>
+
+	<!-- bootstrap -->
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<!-- count down -->
+	<script th:src="@{/js/jquery.countdown.js}"></script>
+	<!-- isotope -->
+	<script th:src="@{/js/jquery.isotope-3.0.6.min.js}"></script>
+	<!-- waypoints -->
+	<script th:src="@{/js/waypoints.js}"></script>
+	<!-- owl carousel -->
+	<script th:src="@{/js/owl.carousel.min.js}"></script>
+	<!-- magnific popup -->
+	<script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+	<!-- mean menu -->
+	<script th:src="@{/js/jquery.meanmenu.min.js}"></script>
+	<!-- sticker js -->
+	<script th:src="@{/js/sticker.js}"></script>
+	<!-- main js -->
+	<script th:src="@{/js/main.js}"></script>
+	<!-- Script for random background display -->
+	<script>
+		const backgrounds = document.querySelectorAll('.error404-bg');
+		const imageUrls = [
+			'url(../img/custom-graphics/404-background/404bg-1.jpeg)',
+			'url(../img/custom-graphics/404-background/404bg-2.jpeg)',
+			'url(../img/custom-graphics/404-background/404bg-3.jpeg)',
+			'url(../img/custom-graphics/404-background/404bg-4.jpeg)',
+			'url(../img/custom-graphics/404-background/404bg-5.jpeg)',
+
+		];
+
+		backgrounds.forEach(background => {
+			const randomIndex = Math.floor(Math.random() * imageUrls.length);
+			background.style.backgroundImage = imageUrls[randomIndex];
+			background.style.backgroundSize = 'cover';
+			background.style.backgroundPosition = 'center';
+			background.style.backgroundAttachment = 'fixed';
+		});
+
+	</script>
+	</body>
+</html>
