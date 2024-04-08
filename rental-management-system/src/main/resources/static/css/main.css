@@ -475,7 +475,7 @@ a.boxed-btn, a.bordered-btn, a.cart-btn {
 }
 
 .breadcrumb-bg {
-  background-image: url(../img/breadcrumb-bg.jpg);
+  background-image: url(../img/custom-graphics/Workers/WorkerBG4.jpeg);
 }
 
 .breadcrumb-text p {
@@ -1362,7 +1362,7 @@ a.mobile-show.search-bar-icon:hover {
 static/img/custom-graphics/BG (27).jpeg
 ----------------------------------------------------------------------------- */
 .hero-bg {
-  background-image: url(../img/custom-graphics/BG26.jpeg);
+  background-image: url(../img/custom-graphics/Backgrounds/BG-1.jpeg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1472,7 +1472,7 @@ input[type="submit"] {
 }
 
 .homepage-bg-1 {
-  background-image: url(../img/custom-graphics/BG26.jpeg);
+  background-image: url(../img/custom-graphics/Backgrounds/BG-1.jpeg);
 }
 
 .homepage-bg-2 {
@@ -2178,19 +2178,19 @@ a.video-play-btn {
 }
 
 .team-bg-1 {
-  background-image: url(../img/team/team-1.jpg);
+  background-image: url(../img/custom-graphics/Workers/Worker1.jpeg);
 }
 
 .team-bg-2 {
-  background-image: url(../img/team/team-2.jpg);
+  background-image: url(../img/custom-graphics/Workers/Worker2.jpeg);
 }
 
 .team-bg-3 {
-  background-image: url(../img/team/team-3.jpg);
+  background-image: url(../img/custom-graphics/Workers/Worker3.jpeg);
 }
 
 .team-bg-4 {
-  background-image: url(../img/team/team-4.jpg);
+  background-image: url(../img/custom-graphics/Workers/Worker4.jpeg);
 }
 
 .team-bg {
