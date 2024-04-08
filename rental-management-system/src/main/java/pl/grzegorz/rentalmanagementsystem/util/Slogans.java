@@ -16,7 +16,17 @@ public class Slogans {
             "Rent Smarter, Party Harder: Choose Us",
             "Rent, Rock, Repeat: Your Event Starts Here",
             "Let's rock! Get your gear and make your event epic.",
-            "Nothing like a good rental to get the blood pumping."
+            "Nothing like a good rental to get the blood pumping.",
+            "Lighting up your stage, one rental at a time.",
+            "Elevate your event with our top-tier equipment rentals.",
+            "Setting the stage for your success.",
+            "Experience the power of professional sound with Rental MS.",
+            "Where every event shines brighter.",
+            "Unleash the sound of perfection with Rental MS.",
+            "Empowering your events with cutting-edge equipment.",
+            "Your stage, our commitment to excellence.",
+            "Bringing your vision to life, one rental at a time.",
+            "Amplify your event with Rental MS."
     };
 }
 
