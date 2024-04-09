@@ -26,5 +26,10 @@ public class News {
     private String title;
 
     @Lob
+    private String excerpt;
+
+    @Lob
     private String content;
+
+    private String imageUrl;
 }
