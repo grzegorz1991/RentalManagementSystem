@@ -191,15 +191,17 @@
 <!-- end scripts -->
 <script>
 	const newsBackgrounds = document.querySelectorAll('.news-bg');
-	const imageUrls = [
-		'url(../img/custom-graphics/Shop/Backgrounds/Shop-bg1.jpeg)',
-		'url(../img/custom-graphics/Shop/Backgrounds/Shop-bg2.jpeg)',
-		'url(../img/custom-graphics/Shop/Backgrounds/Shop-bg3.jpeg)',
+	const newsImageUrls = [
+		'url(../img/custom-graphics/Backgrounds/NewsBG1.jpeg)',
+		'url(../img/custom-graphics/Backgrounds/NewsBG2.jpeg)',
+		'url(../img/custom-graphics/Backgrounds/NewsBG3.jpeg)',
+		'url(../img/custom-graphics/Backgrounds/NewsBG4.jpeg)',
+		'url(../img/custom-graphics/Backgrounds/NewsBG5.jpeg)',
 	];
 
 	newsBackgrounds.forEach(background => {
-		const randomIndex = Math.floor(Math.random() * imageUrls.length);
-		background.style.backgroundImage = imageUrls[randomIndex];
+		const randomIndex = Math.floor(Math.random() * newsImageUrls.length);
+		background.style.backgroundImage = newsImageUrls[randomIndex];
 		background.style.backgroundSize = 'cover';
 		background.style.backgroundPosition = 'center';
 		background.style.backgroundAttachment = 'fixed';
