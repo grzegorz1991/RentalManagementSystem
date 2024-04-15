@@ -29,6 +29,7 @@ public class News {
     private String excerpt;
 
     @Lob
+    @Column(columnDefinition = "TEXT") // Adjust column definition to use TEXT data type
     private String content;
 
     private String imageUrl;
