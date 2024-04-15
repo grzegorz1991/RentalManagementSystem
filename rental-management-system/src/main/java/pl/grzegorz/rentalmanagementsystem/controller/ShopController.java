@@ -17,6 +17,7 @@ public class ShopController {
     public String home(Model model) {
         List<Equipment> equipmentList = equipmentService.getAllEquipment();
         model.addAttribute("equipmentList", equipmentList);
+        model.addAttribute("activePage", "shop");
         return "shop";
     }
 

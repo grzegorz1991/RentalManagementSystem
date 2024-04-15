@@ -20,6 +20,7 @@ public class AboutUsController {
     @GetMapping("/aboutUs")
     public String aboutUs(Model model) {
         model.addAttribute("randomSlogan", getRandomSlogan());
+        model.addAttribute("activePage", "about");
         return "about";
     }
 }

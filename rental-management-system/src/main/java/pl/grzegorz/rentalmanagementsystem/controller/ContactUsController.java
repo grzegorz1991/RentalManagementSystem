@@ -11,7 +11,7 @@ public class ContactUsController {
     @GetMapping("/contact")
     public String contactUs(Model model) {
 
-
+        model.addAttribute("activePage", "contact");
         return "contact";
 
     }

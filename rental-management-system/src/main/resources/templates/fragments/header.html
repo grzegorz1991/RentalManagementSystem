@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
@@ -23,25 +22,25 @@
 
                         <!-- menu start -->
                         <nav class="main-menu">
-                            <ul>
-                                <li class="current-list-item"><a href="/">Home</a>
-                                    <!-- no need for this one since we have only one landing Page so far
-                                    <ul class="sub-menu">
-                                        <li><a href="/">Static Home</a></li>
-                                        <li><a href="#">Slider Home</a></li>
-                                    </ul>
-                                    -->
-                                </li>
-                                <li><a href="/aboutUs">About Us</a></li>
 
-                                <li><a href="#">News</a>
+
+                            <ul>
+                                <li th:class="${activePage == 'home' ? 'current-list-item' : ''}"><a href="/">Home</a>
+                                </li>
+                                <li th:class="${activePage == 'about' ? 'current-list-item' : ''}"><a href="/aboutUs">About
+                                    Us</a></li>
+
+                                <li th:class="${activePage == 'news' ? 'current-list-item' : ''}"><a href="/news">News</a>
                                     <ul class="sub-menu">
                                         <li><a href="#">News</a></li>
                                         <li><a href="#">Single News</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="/contact">Contact</a></li>
-                                <li><a href="/shop">Shop</a>
+
+                                <li th:class="${activePage == 'contact' ? 'current-list-item' : ''}"><a href="/contact">Contact</a>
+                                </li>
+                                <li th:class="${activePage == 'shop' ? 'current-list-item' : ''}"><a
+                                        href="/shop">Shop</a>
                                     <ul class="sub-menu">
                                         <li><a href="/shop">Our products</a></li>
                                         <li><a href="#">Cart</a></li>
@@ -51,7 +50,8 @@
                                 <li>
                                     <div class="header-icons">
                                         <a class="shopping-cart" href="#"><i class="fas fa-shopping-cart"></i></a>
-                                        <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+                                        <a class="mobile-hide search-bar-icon" href="#"><i
+                                                class="fas fa-search"></i></a>
                                     </div>
                                 </li>
                             </ul>

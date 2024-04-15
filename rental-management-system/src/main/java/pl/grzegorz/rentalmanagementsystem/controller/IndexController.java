@@ -26,6 +26,7 @@ public class IndexController {
     public String home(Model model) {
         model.addAttribute("randomSlogan", getRandomSlogan());
         model.addAttribute("newsList", newsService.getLast3News());
+        model.addAttribute("activePage", "home");
         return "index";
     }
 }
