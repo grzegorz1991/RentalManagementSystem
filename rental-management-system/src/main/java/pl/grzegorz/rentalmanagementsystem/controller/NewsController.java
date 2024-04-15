@@ -20,6 +20,7 @@ public class NewsController {
     public String news(Model model) {
         model.addAttribute("newsList", newsService.getAllNews());
         model.addAttribute("activePage", "news");
+
         return "news";
     }
 }
