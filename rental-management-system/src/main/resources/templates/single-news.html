@@ -160,6 +160,8 @@
                         </ul>
                     </div>
 
+
+                    <!-- LEGACY CODE LEFT AS BACKUP
                     <div class="archive-posts">
                         <h4>Archive News</h4>
                         <ul>
@@ -168,8 +170,35 @@
                             </li>
                         </ul>
                     </div>
+                    -->
 
 
+                    <!-- Loop through the article count by month -->
+                    <div class="archive-posts">
+                        <h4>Archive News</h4>
+                        <ul>
+                            <li th:each="monthEntry : ${articleCountByMonth[0]}">
+                                <a href="#" th:text="${monthEntry.key} + ' (' + ${monthEntry.value} + ')'"
+                                   th:attr="data-target='#articlesCollapse' + ${#strings.replace(monthEntry.key, ' ', '')}"
+                                   data-toggle="collapse"></a>
+
+                                <ul class="collapse" th:id="'articlesCollapse' + ${#strings.replace(monthEntry.key, ' ', '')}">
+
+                                    <li th:each="article : ${articlesByMonth[monthEntry.key]}">
+                                        <a th:href="@{'/news/' + ${article.id}}">
+                                            <p th:text="${article.title}"></p>
+
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+
+                    <!-- LEGACY WE MIGHT GO BACK TO THAT CODE LATER
                     <div class="tag-section">
                         <h4>Tags</h4>
                         <ul>
@@ -181,6 +210,7 @@
                             <li><a href="single-news.html">Banana</a></li>
                         </ul>
                     </div>
+                    -->
                 </div>
             </div>
         </div>
