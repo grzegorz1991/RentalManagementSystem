@@ -2759,3 +2759,10 @@ table.order-details tbody td {
   vertical-align: middle;
   width: 100%;
 }
+.hidden {
+  display: none;
+}
+/* Hide comments with the 'hidden' class */
+.single-comment-body.hidden {
+  display: none;
+}

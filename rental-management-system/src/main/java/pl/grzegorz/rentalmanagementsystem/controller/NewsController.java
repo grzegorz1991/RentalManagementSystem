@@ -5,7 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import pl.grzegorz.rentalmanagementsystem.entity.Comment;
 import pl.grzegorz.rentalmanagementsystem.entity.News;
+import pl.grzegorz.rentalmanagementsystem.service.CommentService;
 import pl.grzegorz.rentalmanagementsystem.service.NewsService;
 
 import java.time.format.DateTimeFormatter;
@@ -16,10 +18,12 @@ import java.util.Map;
 public class NewsController {
 
     private final NewsService newsService;
+    private final CommentService commentService;
 
     @Autowired
-    public NewsController(NewsService newsService) {
+    public NewsController(NewsService newsService, CommentService commentService) {
         this.newsService = newsService;
+        this.commentService = commentService;
     }
 
     @GetMapping("/news")
@@ -51,6 +55,12 @@ public class NewsController {
             articlesByMonth.computeIfAbsent(monthYear, k -> new ArrayList<>()).add(news);
         }
         model.addAttribute("articlesByMonth", articlesByMonth);
+
+        List<Comment> commentList = commentService.getCommentsByNewsId(id);
+        model.addAttribute("ListOfNewsComment", commentList);
+
+        Integer numberOfCommentsForNews = commentService.numberOfCommentsByNewsId(id);
+        model.addAttribute("commentNumber", numberOfCommentsForNews);
 
         return "single-news";
     }

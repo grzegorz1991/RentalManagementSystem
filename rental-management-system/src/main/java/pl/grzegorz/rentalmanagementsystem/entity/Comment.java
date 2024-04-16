@@ -39,4 +39,6 @@ public class Comment {
 
     @Column(nullable = false)
     private boolean accepted;
+
+    private String formattedDate;
 }
