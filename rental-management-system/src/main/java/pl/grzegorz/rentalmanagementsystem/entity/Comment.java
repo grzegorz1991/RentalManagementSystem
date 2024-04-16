@@ -40,5 +40,8 @@ public class Comment {
     @Column(nullable = false)
     private boolean accepted;
 
+    @Column()
+    private String email;
+
     private String formattedDate;
 }

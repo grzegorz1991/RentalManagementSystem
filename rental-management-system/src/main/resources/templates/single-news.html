@@ -90,38 +90,27 @@
                         <p><span th:text="${news.content}"></span></p>
                     </div>
 
-                    <!-- Our implementation -->
-                    <!-- Replace the button with a text link -->
                     <div class="comments-list-wrap">
                         <h3 class="comment-count-title" th:text="'Comments (' + ${commentNumber} + ')'"></h3>
                         <div class="comment-list">
-                            <!-- Loop through all comments -->
                             <div th:each="comment, iterStat : ${ListOfNewsComment}">
-                                <!-- Display each comment -->
                                 <div class="single-comment-body" th:classappend="${iterStat.index >= 5 ? ' hidden' : ''}">
                                     <div class="comment-user-avater">
                                         <img src="assets/img/avaters/avatar1.png" alt="">
                                     </div>
                                     <div class="comment-text-body">
-                                        <!-- Display the username, creation date, and reply link of the comment -->
                                         <h5>
                                             <span th:text="${comment.username}"></span>
                                             <span class="comment-date" th:text="${comment.formattedDate}"></span>
-                                            <a href="#">reply</a>
+                                            <!-- <a href="#">reply</a> -->
                                         </h5>
-                                        <!-- Display the comment content -->
                                         <p th:text="${comment.content}"></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Text link for "More" -->
-                        <!-- Text link for "More" with initial text "More" -->
                         <span id="showMoreComments" onclick="showMoreComments()" style="cursor: pointer;">More</span>
-
                     </div>
-
-
 
                     <script>
                         // JavaScript function to update "More" link text with remaining comments count
@@ -129,16 +118,13 @@
                             var moreLink = document.getElementById('showMoreComments');
                             moreLink.textContent = 'More (' + hiddenCommentsCount + ')';
                         }
-
-                        // JavaScript function to show more comments
                         function showMoreComments() {
-                            // Select all hidden comments after the first 5
                             var hiddenComments = document.querySelectorAll('.comment-list .single-comment-body.hidden');
-                            // Toggle visibility for each hidden comment
+
                             hiddenComments.forEach(function(comment) {
                                 comment.classList.toggle('hidden');
                             });
-                            // Update the text of the "More" link
+
                             updateMoreLinkText(hiddenComments.length);
                         }
                     </script>
@@ -146,23 +132,26 @@
 
 
 
+                    <form th:action="@{/comments/submit}" method="post" th:object="${commentDTO}">
+                        <input type="hidden" th:name="newsID" th:value="${newsID}" />
+                        <p>
+                            <input type="text" th:field="*{name}" placeholder="Your Name">
+                            <input type="email" th:field="*{email}" placeholder="Your Email">
+                        </p>
+                        <p><textarea th:field="*{comment}" id="comment" cols="30" rows="10" placeholder="Your Message"></textarea></p>
+                        <p><input type="submit" value="Submit"></p>
+                    </form>
 
-                    <!-- End of Our implementation -->
 
 
-                    <div class="comment-template">
-                        <h4>Leave a comment</h4>
-                        <p>If you have a comment dont feel hesitate to send us your opinion.</p>
-                        <form action="index.html">
-                            <p>
-                                <input type="text" placeholder="Your Name">
-                                <input type="email" placeholder="Your Email">
-                            </p>
-                            <p><textarea name="comment" id="comment" cols="30" rows="10"
-                                         placeholder="Your Message"></textarea></p>
-                            <p><input type="submit" value="Submit"></p>
-                        </form>
-                    </div>
+
+
+
+
+
+
+
+
                 </div>
             </div>
             <div class="col-lg-4">

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import pl.grzegorz.rentalmanagementsystem.dto.CommentDTO;
 import pl.grzegorz.rentalmanagementsystem.entity.Comment;
 import pl.grzegorz.rentalmanagementsystem.entity.News;
 import pl.grzegorz.rentalmanagementsystem.service.CommentService;
@@ -56,11 +57,17 @@ public class NewsController {
         }
         model.addAttribute("articlesByMonth", articlesByMonth);
 
-        List<Comment> commentList = commentService.getCommentsByNewsId(id);
+     //   List<Comment> commentList = commentService.getCommentsByNewsId(id);
+
+        List<Comment> commentList = commentService.getCommentsByNewsIdDesc(id);
         model.addAttribute("ListOfNewsComment", commentList);
 
         Integer numberOfCommentsForNews = commentService.numberOfCommentsByNewsId(id);
         model.addAttribute("commentNumber", numberOfCommentsForNews);
+
+
+        model.addAttribute("commentDTO", new CommentDTO());
+        model.addAttribute("newsID", id);
 
         return "single-news";
     }
