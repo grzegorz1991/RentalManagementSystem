@@ -5,7 +5,11 @@ import org.springframework.stereotype.Service;
 import pl.grzegorz.rentalmanagementsystem.entity.News;
 import pl.grzegorz.rentalmanagementsystem.repository.NewsRepository;
 
-import java.util.List;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
+
+import java.time.YearMonth;
+
 
 @Service
 public class NewsService {
@@ -22,8 +26,11 @@ public class NewsService {
     }
 
     public List<News> getLast3News() {
-        // Implementing a custom query method in the repository to fetch the last 3 news
         return newsRepository.findTop3ByOrderByDateDesc();
+    }
+
+    public List<News> getLast5News() {
+        return newsRepository.findTop5ByOrderByDateDesc();
     }
 
     public News createOrUpdateNews(News news) {
@@ -32,5 +39,22 @@ public class NewsService {
 
     public void deleteNews(Long id) {
         newsRepository.deleteById(id);
+    }
+
+    public List<Map<String, Integer>> getArticleCountByMonth() {
+        List<Map<String, Integer>> articleCountByMonth = new ArrayList<>();
+        List<News> newsList = getAllNews();
+        Map<String, Integer> countMap = new HashMap<>();
+
+
+        for (News news : newsList) {
+            // Extract month and year from the news date and format it in English
+            String monthYear = news.getDate().format(DateTimeFormatter.ofPattern("MMMM yyyy", Locale.ENGLISH));
+
+            // Increment the count for the corresponding month-year
+            countMap.put(monthYear, countMap.getOrDefault(monthYear, 0) + 1);
+        }
+        articleCountByMonth.add(countMap);
+        return articleCountByMonth;
     }
 }
