@@ -73,7 +73,8 @@
                     <a th:href="@{'/news/' + ${newsItem.id}}">
                         <!-- Assuming you have a property named 'imageUrl' in your News entity -->
                         <div class="latest-news-bg"
-                             th:style="'background-image: url(' + ${newsItem.imageUrl} + ');'"></div>
+                             th:style="'background-image: url(' + (${newsItem.imageUrl} ?: '/img/custom-graphics/Backgrounds/NewsDefault.jpeg') + ');'"></div>
+
                     </a>
                     <div class="news-text-box">
                         <h3><a th:href="@{'/news/' + ${newsItem.id}}" th:text="${newsItem.title}"></a></h3>

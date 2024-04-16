@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description"
-		  content="Bootstrap Template Created by Imran Hossain. Edited and used for Portfolio purposes by Grzegorz Sroda">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Bootstrap Template Created by Imran Hossain. Edited and used for Portfolio purposes by Grzegorz Sroda">
 
-	<!-- title -->
-	<title>Rental MS</title>
-	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" th:href="@{/img/custom-logos/logo-small-black.png}">
-	<!-- google font -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-	<!-- fontawesome -->
-	<!-- Link to all.min.css -->
-	<link rel="stylesheet" th:href="@{/css/all.min.css}">
+    <!-- title -->
+    <title>Rental MS</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" th:href="@{/img/custom-logos/logo-small-black.png}">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <!-- Link to all.min.css -->
+    <link rel="stylesheet" th:href="@{/css/all.min.css}">
 
-	<!-- Link to bootstrap.min.css -->
-	<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
-	<!-- Link to owl.carousel.css -->
-	<link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
-	<!-- Link to magnific-popup.css -->
-	<link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
-	<!-- Link to animate.css -->
-	<link rel="stylesheet" th:href="@{/css/animate.css}">
-	<!-- Link to meanmenu.min.css -->
-	<link rel="stylesheet" th:href="@{/css/meanmenu.min.css}">
-	<!-- Link to main.css -->
-	<link rel="stylesheet" th:href="@{/css/main.css}">
-	<!-- Link to responsive.css -->
-	<link rel="stylesheet" th:href="@{/css/responsive.css}">
+    <!-- Link to bootstrap.min.css -->
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+    <!-- Link to owl.carousel.css -->
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
+    <!-- Link to magnific-popup.css -->
+    <link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+    <!-- Link to animate.css -->
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <!-- Link to meanmenu.min.css -->
+    <link rel="stylesheet" th:href="@{/css/meanmenu.min.css}">
+    <!-- Link to main.css -->
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <!-- Link to responsive.css -->
+    <link rel="stylesheet" th:href="@{/css/responsive.css}">
 
 </head>
 <body>
@@ -48,127 +48,146 @@
 <div th:replace="fragments/search-area :: search-area"></div>
 <!-- end search area -->
 
-	
-	<!-- breadcrumb-section -->
-	<div class="breadcrumb-section breadcrumb-bg">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="breadcrumb-text">
-						<p>Read the Details</p>
-						<h1>Single Article</h1>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end breadcrumb section -->
-	
-	<!-- single article section -->
-	<div class="mt-150 mb-150">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8">
-					<div class="single-article-section">
-						<div class="single-article-text">
 
-							<div class="single-artcile-bg"
-								 th:style="'background-image: url(' + ${news.imageUrl} + ');'"></div>
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="breadcrumb-text">
 
-							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> <span th:text="${news.author}"></span></span>
-								<span class="date"><i class="fas fa-calendar"></i> <span th:text="${news.date}"></span></span>
-							</p>
-							<h2><span th:text="${news.title}"></span></h2>
-							<p><span th:text="${news.content}"></span></p>
-						</div>
+                    <p>Read the Details :</p>
+                    <h1><span th:text="${news.title}"></span></h1>
 
-						<div class="comments-list-wrap">
-							<h3 class="comment-count-title">3 Comments</h3>
-							<div class="comment-list">
-								<div class="single-comment-body">
-									<div class="comment-user-avater">
-										<img src="assets/img/avaters/avatar1.png" alt="">
-									</div>
-									<div class="comment-text-body">
-										<h4>Jenny Joe <span class="comment-date">Aprl 26, 2020</span> <a href="#">reply</a></h4>
-										<p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus.</p>
-									</div>
-									<div class="single-comment-body child">
-										<div class="comment-user-avater">
-											<img src="assets/img/avaters/avatar3.png" alt="">
-										</div>
-										<div class="comment-text-body">
-											<h4>Simon Soe <span class="comment-date">Aprl 27, 2020</span> <a href="#">reply</a></h4>
-											<p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus.</p>
-										</div>
-									</div>
-								</div>
-								<div class="single-comment-body">
-									<div class="comment-user-avater">
-										<img src="assets/img/avaters/avatar2.png" alt="">
-									</div>
-									<div class="comment-text-body">
-										<h4>Addy Aoe <span class="comment-date">May 12, 2020</span> <a href="#">reply</a></h4>
-										<p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus Suspendisse lacinia velit a eros porttitor, in interdum ante faucibus.</p>
-									</div>
-								</div>
-							</div>
-						</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end breadcrumb section -->
 
-						<div class="comment-template">
-							<h4>Leave a comment</h4>
-							<p>If you have a comment dont feel hesitate to send us your opinion.</p>
-							<form action="index.html">
-								<p>
-									<input type="text" placeholder="Your Name">
-									<input type="email" placeholder="Your Email">
-								</p>
-								<p><textarea name="comment" id="comment" cols="30" rows="10" placeholder="Your Message"></textarea></p>
-								<p><input type="submit" value="Submit"></p>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="sidebar-section">
-						<div class="recent-posts">
-							<h4>Recent Posts</h4>
-							<ul>
-								<li><a href="single-news.html">You will vainly look for fruit on it in autumn.</a></li>
-								<li><a href="single-news.html">A man's worth has its season, like tomato.</a></li>
-								<li><a href="single-news.html">Good thoughts bear good fresh juicy fruit.</a></li>
-								<li><a href="single-news.html">Fall in love with the fresh orange</a></li>
-								<li><a href="single-news.html">Why the berries always look delecious</a></li>
-							</ul>
-						</div>
-						<div class="archive-posts">
-							<h4>Archive Posts</h4>
-							<ul>
-								<li><a href="single-news.html">JAN 2019 (5)</a></li>
-								<li><a href="single-news.html">FEB 2019 (3)</a></li>
-								<li><a href="single-news.html">MAY 2019 (4)</a></li>
-								<li><a href="single-news.html">SEP 2019 (4)</a></li>
-								<li><a href="single-news.html">DEC 2019 (3)</a></li>
-							</ul>
-						</div>
-						<div class="tag-section">
-							<h4>Tags</h4>
-							<ul>
-								<li><a href="single-news.html">Apple</a></li>
-								<li><a href="single-news.html">Strawberry</a></li>
-								<li><a href="single-news.html">BErry</a></li>
-								<li><a href="single-news.html">Orange</a></li>
-								<li><a href="single-news.html">Lemon</a></li>
-								<li><a href="single-news.html">Banana</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end single article section -->
+<!-- single article section -->
+<div class="mt-150 mb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="single-article-section">
+                    <div class="single-article-text">
+
+                        <div class="single-artcile-bg"
+                             th:style="'background-image: url(' + (${news.imageUrl} ?: '/img/custom-graphics/Backgrounds/NewsDefault2.jpeg') + ');'"></div>
+
+
+                        <p class="blog-meta">
+                            <span class="author"><i class="fas fa-user"></i> <span
+                                    th:text="${news.author}"></span></span>
+                            <span class="date"><i class="fas fa-calendar"></i> <span
+                                    th:text="${news.date}"></span></span>
+                        </p>
+                        <h1><span th:text="${news.excerpt}"></span> </h1>
+
+                        <h2><span th:text="${news.title}"></span></h2>
+                        <p><span th:text="${news.content}"></span></p>
+                    </div>
+
+                    <div class="comments-list-wrap">
+                        <h3 class="comment-count-title">3 Comments</h3>
+                        <div class="comment-list">
+                            <div class="single-comment-body">
+                                <div class="comment-user-avater">
+                                    <img src="assets/img/avaters/avatar1.png" alt="">
+                                </div>
+                                <div class="comment-text-body">
+                                    <h4>Jenny Joe <span class="comment-date">Aprl 26, 2020</span> <a href="#">reply</a>
+                                    </h4>
+                                    <p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna,
+                                        maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros
+                                        porttitor, in interdum ante faucibus Suspendisse lacinia velit a eros porttitor,
+                                        in interdum ante faucibus.</p>
+                                </div>
+                                <div class="single-comment-body child">
+                                    <div class="comment-user-avater">
+                                        <img src="assets/img/avaters/avatar3.png" alt="">
+                                    </div>
+                                    <div class="comment-text-body">
+                                        <h4>Simon Soe <span class="comment-date">Aprl 27, 2020</span> <a
+                                                href="#">reply</a></h4>
+                                        <p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna,
+                                            maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros
+                                            porttitor, in interdum ante faucibus.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-comment-body">
+                                <div class="comment-user-avater">
+                                    <img src="assets/img/avaters/avatar2.png" alt="">
+                                </div>
+                                <div class="comment-text-body">
+                                    <h4>Addy Aoe <span class="comment-date">May 12, 2020</span> <a href="#">reply</a>
+                                    </h4>
+                                    <p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna,
+                                        maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros
+                                        porttitor, in interdum ante faucibus Suspendisse lacinia velit a eros porttitor,
+                                        in interdum ante faucibus.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="comment-template">
+                        <h4>Leave a comment</h4>
+                        <p>If you have a comment dont feel hesitate to send us your opinion.</p>
+                        <form action="index.html">
+                            <p>
+                                <input type="text" placeholder="Your Name">
+                                <input type="email" placeholder="Your Email">
+                            </p>
+                            <p><textarea name="comment" id="comment" cols="30" rows="10"
+                                         placeholder="Your Message"></textarea></p>
+                            <p><input type="submit" value="Submit"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="sidebar-section">
+                    <div class="recent-posts">
+                        <h4>Recent Posts</h4>
+                        <ul>
+                            <li><a href="single-news.html">You will vainly look for fruit on it in autumn.</a></li>
+                            <li><a href="single-news.html">A man's worth has its season, like tomato.</a></li>
+                            <li><a href="single-news.html">Good thoughts bear good fresh juicy fruit.</a></li>
+                            <li><a href="single-news.html">Fall in love with the fresh orange</a></li>
+                            <li><a href="single-news.html">Why the berries always look delecious</a></li>
+                        </ul>
+                    </div>
+                    <div class="archive-posts">
+                        <h4>Archive Posts</h4>
+                        <ul>
+                            <li><a href="single-news.html">JAN 2019 (5)</a></li>
+                            <li><a href="single-news.html">FEB 2019 (3)</a></li>
+                            <li><a href="single-news.html">MAY 2019 (4)</a></li>
+                            <li><a href="single-news.html">SEP 2019 (4)</a></li>
+                            <li><a href="single-news.html">DEC 2019 (3)</a></li>
+                        </ul>
+                    </div>
+                    <div class="tag-section">
+                        <h4>Tags</h4>
+                        <ul>
+                            <li><a href="single-news.html">Apple</a></li>
+                            <li><a href="single-news.html">Strawberry</a></li>
+                            <li><a href="single-news.html">BErry</a></li>
+                            <li><a href="single-news.html">Orange</a></li>
+                            <li><a href="single-news.html">Lemon</a></li>
+                            <li><a href="single-news.html">Banana</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end single article section -->
 
 <!-- logo carousel -->
 <div th:replace="fragments/logo-carusel :: logo-carusel"></div>
@@ -186,25 +205,24 @@
 <div th:insert="fragments/scripts :: scripts"></div>
 <!-- end scripts -->
 <script>
-	const newsBackgrounds = document.querySelectorAll('.news-bg');
-	const newsImageUrls = [
-		'url(../img/custom-graphics/Backgrounds/NewsBG1.jpeg)',
-		'url(../img/custom-graphics/Backgrounds/NewsBG2.jpeg)',
-		'url(../img/custom-graphics/Backgrounds/NewsBG3.jpeg)',
-		'url(../img/custom-graphics/Backgrounds/NewsBG4.jpeg)',
-		'url(../img/custom-graphics/Backgrounds/NewsBG5.jpeg)',
-	];
+    const newsBackgrounds = document.querySelectorAll('.news-bg');
+    const newsImageUrls = [
+        'url(../img/custom-graphics/Backgrounds/NewsBG1.jpeg)',
+        'url(../img/custom-graphics/Backgrounds/NewsBG2.jpeg)',
+        'url(../img/custom-graphics/Backgrounds/NewsBG3.jpeg)',
+        'url(../img/custom-graphics/Backgrounds/NewsBG4.jpeg)',
+        'url(../img/custom-graphics/Backgrounds/NewsBG5.jpeg)',
+    ];
 
-	newsBackgrounds.forEach(background => {
-		const randomIndex = Math.floor(Math.random() * newsImageUrls.length);
-		background.style.backgroundImage = newsImageUrls[randomIndex];
-		background.style.backgroundSize = 'cover';
-		background.style.backgroundPosition = 'center';
-		background.style.backgroundAttachment = 'fixed';
-	});
+    newsBackgrounds.forEach(background => {
+        const randomIndex = Math.floor(Math.random() * newsImageUrls.length);
+        background.style.backgroundImage = newsImageUrls[randomIndex];
+        background.style.backgroundSize = 'cover';
+        background.style.backgroundPosition = 'center';
+        background.style.backgroundAttachment = 'fixed';
+    });
 
 </script>
-
 
 
 </body>
