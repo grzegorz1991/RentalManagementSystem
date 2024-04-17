@@ -2780,20 +2780,16 @@ table.order-details tbody td {
   font-size: 1.1em; /* Adjust font size as needed */
 }
 
-.more-link-container #showMoreComments::after {
-  content: '\25BC'; /* Downward arrow Unicode character */
-  position: absolute;
-  bottom: -15px; /* Adjust the distance from the bottom as needed */
-  left: 50%;
-  transform: translateX(-50%);
-}
+
 
 .comment-list .single-comment-body {
-  transition: max-height 1s ease; /* Adjust the duration to make the collapse slower */
-  overflow: hidden;
-  max-height: 100px; /* Set the initial max-height value */
+  max-height: 100px; /* Set initial max-height */
+  overflow: hidden; /* Hide overflow content */
+  transition: max-height 0.3s ease; /* Add transition effect */
 }
 
 .comment-list .single-comment-body.hidden {
-  max-height: 0; /* Set the max-height to 0 for hidden comments */
+  max-height: 0; /* Collapse hidden comments */
 }
+
+
