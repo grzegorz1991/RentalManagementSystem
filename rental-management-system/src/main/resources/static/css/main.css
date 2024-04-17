@@ -2781,7 +2781,6 @@ table.order-details tbody td {
 }
 
 
-
 .comment-list .single-comment-body {
   max-height: 100px; /* Set initial max-height */
   overflow: hidden; /* Hide overflow content */
@@ -2791,5 +2790,4 @@ table.order-details tbody td {
 .comment-list .single-comment-body.hidden {
   max-height: 0; /* Collapse hidden comments */
 }
-
 
