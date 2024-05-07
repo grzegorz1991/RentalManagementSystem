@@ -18,7 +18,6 @@ public class News {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Using LocalDate for date representation
     private LocalDate date;
 
     private String author;
@@ -29,7 +28,7 @@ public class News {
     private String excerpt;
 
     @Lob
-    @Column(columnDefinition = "TEXT") // Adjust column definition to use TEXT data type
+    @Column(columnDefinition = "TEXT")
     private String content;
 
     private String imageUrl;
