@@ -32,7 +32,7 @@
 
                                 <li th:class="${activePage == 'news' ? 'current-list-item' : ''}"><a
                                         href="/news">News</a>
-                                    
+
                                 </li>
 
                                 <li th:class="${activePage == 'contact' ? 'current-list-item' : ''}"><a href="/contact">Contact</a>
@@ -50,6 +50,9 @@
                                 <li>
                                     <div class="header-icons">
                                         <a class="shopping-cart" href="#"><i class="fas fa-shopping-cart"></i></a>
+                                        <span th:if="${!isCartEmpty}" class="cart-badge"> <!-- Assuming you have a CSS class for the badge -->
+                                         <span class="badge-number">5</span>
+                                        </span>
                                         <a class="mobile-hide search-bar-icon" href="#"><i
                                                 class="fas fa-search"></i></a>
                                     </div>

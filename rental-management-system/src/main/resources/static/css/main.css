@@ -2790,4 +2790,23 @@ table.order-details tbody td {
 .comment-list .single-comment-body.hidden {
   max-height: 0; /* Collapse hidden comments */
 }
+/* CSS for the cart badge */
+.cart-badge {
+  position: relative;
+}
 
+.badge-number {
+  position: absolute;
+  top: 8px; /* Adjust this value to position the number vertically */
+  right: -8px; /* Adjust this value to position the number horizontally */
+  background-color: orange;
+  color: white;
+  border-radius: 50%;
+  padding: 4px;
+  font-size: 12px;
+  width: 20px; /* Ensure width and height are the same */
+  height: 20px; /* Ensure width and height are the same */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
