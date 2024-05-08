@@ -12,7 +12,7 @@ import pl.grzegorz.rentalmanagementsystem.util.Slogans;
 import java.util.Random;
 
 @Controller
-public class IndexController {
+public class IndexController extends BaseController{
     private final NewsService newsService;
 
     private HttpSession session;
