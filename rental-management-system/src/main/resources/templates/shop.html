@@ -100,14 +100,37 @@
                             <span>Price:</span> <span th:text="${equipment.price}"></span> <!-- Use equipment price -->
                         </p>
 
-                        <!-- Add equipmentId as a data attribute in the "Add to Cart" button -->
-                        <a href="#" class="cart-btn" data-equipment-id="1"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 
+                        <!-- Add equipmentId as a data attribute in the "Add to Cart" button -->
+                        <a href="#" class="cart-btn" th:data-equipment-id="${equipment.id}"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                     </div>
                 </div>
             </th:block>
         </div>
     </div>
+
+    <script>
+        $('.cart-btn').click(function(event) {
+            event.preventDefault();
+
+            // Retrieve equipment ID from data attribute
+            var equipmentId = $(this).data('equipment-id');
+
+            // Send a POST request with the equipment ID in the request body
+            $.ajax({
+                url: '/api/cart/1/addEquipment',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ equipmentId: equipmentId }),
+                success: function(data) {
+                    console.log(data);
+                },
+                error: function(xhr, textStatus, errorThrown) {
+                    console.log("Error:", errorThrown);
+                }
+            });
+        });
+    </script>
 
     <!-- PAGINATION-->
     <div class="row">

@@ -1,1 +1,4 @@
 1. All methods will be tested from services and controllers
+2.Pagination must be correlated with equipment lists
+3. Session based cart implementation
+
