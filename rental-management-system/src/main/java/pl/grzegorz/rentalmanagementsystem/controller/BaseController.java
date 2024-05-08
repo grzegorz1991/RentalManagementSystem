@@ -19,8 +19,13 @@ public class BaseController {
 
     @ModelAttribute
     public void addCommonAttributes(Model model) {
+
         boolean isCartEmpty = CartUtils.isCartEmpty(session);
         model.addAttribute("isCartEmpty", isCartEmpty);
+
+        int cartSize = CartUtils.cartSize(session);
+
+        model.addAttribute("cartSize" , cartSize);
 
     }
 }

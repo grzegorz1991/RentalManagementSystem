@@ -4,6 +4,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 import pl.grzegorz.rentalmanagementsystem.dto.AddEquipmentRequest;
 
 //import jakarta.servlet.http.Cookie;
@@ -61,13 +63,19 @@ public class CartController {
     }
 
     @PostMapping("/clearCart")
-    public ResponseEntity<String> clearCart(HttpServletRequest httpServletRequest) {
+    public RedirectView clearCart(HttpServletRequest httpServletRequest, RedirectAttributes attributes) {
         try {
             HttpSession session = httpServletRequest.getSession();
             session.removeAttribute("cartItems");
-            return ResponseEntity.ok("Cart Cleared");
+
+            // Add a flash attribute to indicate successful cart clearance
+            attributes.addFlashAttribute("cartCleared", true);
+
+            // Redirect to the desired page
+            return new RedirectView("/"); // Replace "/your-page-url" with the actual URL
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred");
+            // Handle exceptions if needed
+            return new RedirectView("/error-page"); // Redirect to an error page
         }
     }
 }

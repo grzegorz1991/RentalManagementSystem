@@ -10,9 +10,13 @@ public class CartUtils {
         return cart == null || cart.isEmpty();
     }
 
-    public static int cartSize(HttpSession session){
-        List<Long> cart = (List<Long>)session.getAttribute("cartItems");
-        return  cart.size();
+    public static int cartSize(HttpSession session) {
+        List<Long> cart = (List<Long>) session.getAttribute("cartItems");
 
+        if (cart == null) {
+            return 0;
+        } else {
+            return cart.size();
+        }
     }
 }

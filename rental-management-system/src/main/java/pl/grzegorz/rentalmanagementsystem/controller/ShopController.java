@@ -10,7 +10,7 @@ import pl.grzegorz.rentalmanagementsystem.service.EquipmentService;
 import java.util.List;
 
 @Controller
-public class ShopController {
+public class ShopController extends BaseController{
     @Autowired
     private EquipmentService equipmentService;
     @GetMapping("/shop")

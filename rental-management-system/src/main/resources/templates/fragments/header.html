@@ -42,20 +42,23 @@
                                     <ul class="sub-menu">
                                         <li><a href="/shop">Our products</a></li>
                                         <li><a href="#">Cart</a></li>
-                                        <li><a href="#">Check Out</a></li>
-
+                                        <li><a href="/api/cart/clearCart">Check Out</a></li>
+                                        <form action="/api/cart/clearCart" method="post">
+                                            <button type="submit">Clear Cart</button>
+                                        </form>
 
                                     </ul>
                                 </li>
                                 <li>
                                     <div class="header-icons">
                                         <a class="shopping-cart" href="#"><i class="fas fa-shopping-cart"></i></a>
-                                        <span th:if="${!isCartEmpty}" class="cart-badge"> <!-- Assuming you have a CSS class for the badge -->
-                                         <span class="badge-number">5</span>
+                                        <!-- Add Thymeleaf expression to conditionally render orange dot with number -->
+                                        <span th:if="${cartSize != null && cartSize > 0}" class="cart-badge"> <!-- Assuming you have a CSS class for the badge -->
+                                            <span class="badge-number" th:text="${cartSize}">0</span>
                                         </span>
-                                        <a class="mobile-hide search-bar-icon" href="#"><i
-                                                class="fas fa-search"></i></a>
+                                        <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
                                     </div>
+
                                 </li>
                             </ul>
                         </nav>

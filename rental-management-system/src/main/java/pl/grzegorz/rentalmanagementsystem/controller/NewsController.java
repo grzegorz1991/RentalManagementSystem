@@ -16,7 +16,7 @@ import java.util.*;
 import java.util.Map;
 
 @Controller
-public class NewsController {
+public class NewsController extends BaseController{
 
     private final NewsService newsService;
     private final CommentService commentService;

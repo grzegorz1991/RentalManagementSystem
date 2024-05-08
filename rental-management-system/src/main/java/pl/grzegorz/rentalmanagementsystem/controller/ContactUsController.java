@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class ContactUsController {
+public class ContactUsController extends BaseController{
 
     @GetMapping("/contact")
     public String contactUs(Model model) {
