@@ -9,6 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "cart_item")
 @Data
@@ -30,5 +32,17 @@ public class CartItem {
 
     private int quantity;
 
+
+    private LocalDate startDate; // Add start date field
+
+    private LocalDate endDate; // Add end date field
+
+
+    public CartItem(Equipment equipment, LocalDate startDate, LocalDate endDate, int quantity) {
+        this.equipment = equipment;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.quantity = quantity;
+    }
 
 }

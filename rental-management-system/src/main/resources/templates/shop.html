@@ -102,52 +102,75 @@
 
 
                         <!-- Add equipmentId as a data attribute in the "Add to Cart" button -->
-                        <a href="#" class="cart-btn" th:data-equipment-id="${equipment.id}"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                        <a href="#" class="cart-btn" th:data-equipment-id="${equipment.id}"><i
+                                class="fas fa-shopping-cart"></i> Add to Cart</a>
                     </div>
                 </div>
             </th:block>
         </div>
     </div>
+</div>
 
-    <script>
-        $('.cart-btn').click(function(event) {
-            event.preventDefault();
 
-            // Retrieve equipment ID from data attribute
-            var equipmentId = $(this).data('equipment-id');
-
-            // Send a POST request with the equipment ID in the request body
-            $.ajax({
-                url: '/api/cart/1/addEquipment',
-                type: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify({ equipmentId: equipmentId }),
-                success: function(data) {
-                    console.log(data);
-                },
-                error: function(xhr, textStatus, errorThrown) {
-                    console.log("Error:", errorThrown);
-                }
-            });
-        });
-    </script>
-
-    <!-- PAGINATION-->
-    <div class="row">
-        <div class="col-lg-12 text-center">
-            <div class="pagination-wrap">
-                <ul>
-                    <li><a href="#">Prev</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a class="active" href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">Next</a></li>
-                </ul>
-            </div>
-        </div>
+<!-- First Modal: Order Equipment -->
+<!--    <div id="order-modal" class="modal">-->
+<!--        <div class="modal-content">-->
+<!--            <span class="close">&times;</span>-->
+<!--            <h2>Order Equipment</h2>-->
+<!--            <form id="order-form">-->
+<!--                <label for="start-date">Start Date:</label>-->
+<!--                <input type="date" id="start-date" name="start-date" required><br>-->
+<!--                <label for="end-date">End Date:</label>-->
+<!--                <input type="date" id="end-date" name="end-date" required><br>-->
+<!--                <label for="quantity">Quantity:</label>-->
+<!--                <input type="number" id="quantity" name="quantity" min="1" required><br>-->
+<!--                <button type="submit">Submit</button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!-- First Modal: Order Equipment -->
+<div id="order-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Order Equipment</h2>
+        <form id="order-form">
+            <label for="start-date">Start Date:</label>
+            <input type="date" id="start-date" name="start-date" required><br>
+            <label for="end-date">End Date:</label>
+            <input type="date" id="end-date" name="end-date" required><br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required><br>
+            <button type="submit">Submit</button>
+        </form>
     </div>
 </div>
+
+<!-- Confirmation Modal-->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modalMessage"></div> <!-- This is the element to display the message -->
+        <iframe id="modalIframe" src="" frameborder="0"></iframe>
+    </div>
 </div>
+
+
+<!--    &lt;!&ndash; PAGINATION&ndash;&gt;-->
+<!--    <div class="row">-->
+<!--        <div class="col-lg-12 text-center">-->
+<!--            <div class="pagination-wrap">-->
+<!--                <ul>-->
+<!--                    <li><a href="#">Prev</a></li>-->
+<!--                    <li><a href="#">1</a></li>-->
+<!--                    <li><a class="active" href="#">2</a></li>-->
+<!--                    <li><a href="#">3</a></li>-->
+<!--                    <li><a href="#">Next</a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</div>-->
 <!-- end products -->
 
 
@@ -166,9 +189,8 @@
 
 <!-- jquery -->
 <script th:src="@{/js/jquery-1.11.3.min.js}"></script>
-
 <!-- bootstrap -->
-<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
 <!-- count down -->
 <script th:src="@{/js/jquery.countdown.js}"></script>
 <!-- isotope -->
@@ -185,25 +207,10 @@
 <script th:src="@{/js/sticker.js}"></script>
 <!-- main js -->
 <script th:src="@{/js/main.js}"></script>
-<!-- Script for random background display -->
+<!-- Script for modal -->
 <script th:src="@{/js/shop.js}"></script>
+<!-- BG for Shop -->
+<script th:src="@{/js/shop-bg.js}"></script>
 
-<script>
-    const shopBackgrounds = document.querySelectorAll('.shop-bg');
-    const imageUrls = [
-        'url(../img/custom-graphics/Shop/Backgrounds/Shop-bg1.jpeg)',
-        'url(../img/custom-graphics/Shop/Backgrounds/Shop-bg2.jpeg)',
-        'url(../img/custom-graphics/Shop/Backgrounds/Shop-bg3.jpeg)',
-    ];
-
-    shopBackgrounds.forEach(background => {
-        const randomIndex = Math.floor(Math.random() * imageUrls.length);
-        background.style.backgroundImage = imageUrls[randomIndex];
-        background.style.backgroundSize = 'cover';
-        background.style.backgroundPosition = 'center';
-        background.style.backgroundAttachment = 'fixed';
-    });
-
-</script>
 </body>
 </html>

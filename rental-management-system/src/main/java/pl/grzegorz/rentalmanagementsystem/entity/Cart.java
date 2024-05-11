@@ -39,6 +39,16 @@ public class Cart {
         newItem.setCart(this);
         newItem.setEquipment(equipment);
         newItem.setQuantity(quantity);
+
         cartItems.add(newItem);
+    }
+
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "id=" + id +
+                ", cartItems=" + cartItems +
+                ", user=" + user +
+                '}';
     }
 }

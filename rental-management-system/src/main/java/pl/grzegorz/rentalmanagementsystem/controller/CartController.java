@@ -1,4 +1,5 @@
 package pl.grzegorz.rentalmanagementsystem.controller;
+
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,12 +11,24 @@ import pl.grzegorz.rentalmanagementsystem.dto.AddEquipmentRequest;
 
 //import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpSession;
+import pl.grzegorz.rentalmanagementsystem.entity.CartItem;
+import pl.grzegorz.rentalmanagementsystem.entity.Equipment;
+import pl.grzegorz.rentalmanagementsystem.service.EquipmentService;
+import pl.grzegorz.rentalmanagementsystem.service.NewsService;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 @RequestMapping("/api/cart")
 public class CartController {
+
+    private final EquipmentService equipmentService;
+
+    public CartController(EquipmentService equipmentService) {
+        this.equipmentService = equipmentService;
+    }
 
 
     @PostMapping("/{cartId}/addEquipment")
@@ -25,19 +38,30 @@ public class CartController {
     ) {
         try {
             Long equipmentId = request.getEquipmentId();
-            // Log the equipment ID to console or log files
-            System.out.println("Received equipment ID: " + equipmentId);
+            LocalDate startDate = request.getStartDate(); // Retrieve start date from the request
+            LocalDate endDate = request.getEndDate(); // Retrieve end date from the request
+            int quantity = request.getQuantity(); // Retrieve quantity from the request
+
+            System.out.println("CART ITEM ALMOST ADDED");
+
+
+
+            Equipment equipment = equipmentService.getEquipmentById(equipmentId).orElse(null);
+            if (equipment == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Equipment not found");
+            }
 
             // Get the cart items from session
-            List<Long> cart = (List<Long>) session.getAttribute("cartItems");
+            List<CartItem> cart = (List<CartItem>) session.getAttribute("cartItems");
             if (cart == null) {
-                System.out.println("Initialising cart");
+                System.out.println("Initializing cart");
                 cart = new ArrayList<>();
                 session.setAttribute("cartItems", cart);
             }
 
-            // Add the equipment ID to the cart
-            cart.add(equipmentId);
+            // Add the Equipment object, dates, and quantity to the cart
+            cart.add(new CartItem(equipment, startDate, endDate, quantity));
+            System.out.println(cart);
             session.setAttribute("cartItems", cart);
 
             return ResponseEntity.ok("Equipment added to cart successfully");
